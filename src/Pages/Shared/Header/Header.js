@@ -1,5 +1,5 @@
 import React from 'react';
-// import logo from "./../../images/logo.png";
+import logo from "./../../../images/logo.png";
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 import HeaderBG from "./../../../images/header-bg.png";
@@ -28,9 +28,9 @@ const Header = () => {
     <div>
       <Navbar style={{ background: `url(${HeaderBG})`}} expand="lg">
         <Container>
-          {/* <Navbar.Brand as={NavLink} className="text-white" to="/home">
-            <img width="100px" src={logo} alt="Logo" />
-          </Navbar.Brand> */}
+          <Navbar.Brand as={NavLink} className="text-white" to="/home">
+            <img width="160px" src={logo} alt="Logo" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto  align-items-center">

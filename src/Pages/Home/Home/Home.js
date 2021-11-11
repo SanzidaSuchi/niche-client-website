@@ -1,7 +1,13 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Container, Row } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
+import Service from '../Service/Service';
+import Services from '../Services/Services';
+import Testmonial from '../Testmonial/Testmonial';
+
 
 const Home = () => {
+  const { services } = useAuth();
     return (
         <div>
              <Carousel fade>
@@ -38,6 +44,17 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <Container className="py-5">
+      <div className="my-3 d-flex flex-wrap justify-content-between">
+            <Row>
+              {services?.slice(0, 6)?.map((service) => (
+                <Service key={service.key} service={service} />
+              ))}
+            </Row>
+          </div>
+          <Services></Services>
+          <Testmonial></Testmonial>
+        </Container>
         </div>
     );
 };
