@@ -25,14 +25,8 @@ const MakeAdmin = () => {
           {...register("email", { required: true })}
         />
         <br />
-        <input
-          className="input-field"
-          name="password"
-          placeholder="password"
-          
-          {...register("password", { required: true })}
-        />
-        <br />
+       
+      
 
         <input
           className="submit-btn btn btn-danger mt-3"

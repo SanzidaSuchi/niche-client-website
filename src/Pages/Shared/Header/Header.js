@@ -39,13 +39,6 @@ const Header = () => {
               activeStyle={active}>
                 Home
               </Nav.Link>
-
-              <Nav.Link as={NavLink} to="/addServices" className="text-white"
-              style={navStyle}
-              activeStyle={active}>
-                Add NewService
-              </Nav.Link>
-              
               <Nav.Link as={NavLink} to="/contact" className="text-white"
               style={navStyle}
               activeStyle={active}>

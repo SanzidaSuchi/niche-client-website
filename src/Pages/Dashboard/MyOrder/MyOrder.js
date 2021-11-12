@@ -47,7 +47,7 @@ const MyOrder = () => {
                                 <div className="card-body">
                                     <h5 className="card-title">Booked by: {order.name}</h5>
                                     <h6 className="card-title"><strong>Email:</strong> <small>{order.email}</small></h6>
-                                    <p className="card-title"><strong>Tour place:</strong> {order.date}</p>
+                                    <p className="card-title"><strong>Order place:</strong> {order.date}</p>
                                     <p className="card-text"> <strong>Contact:</strong> {order.description}</p>
                                     <p className="card-text"><strong> Booked date:</strong> {order.date}</p>
                                     <button onClick={() => handleDeleteOrder(order._id)} className='btn btn-danger'>Cancel</button>

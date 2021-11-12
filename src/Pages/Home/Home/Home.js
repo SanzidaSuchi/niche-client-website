@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel, Container, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import Review from '../../Dashboard/Review/Review';
@@ -8,7 +8,12 @@ import Testmonial from '../Testmonial/Testmonial';
 
 
 const Home = () => {
-  const { services } = useAuth();
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
     return (
         <div>
              <Carousel fade>
@@ -53,7 +58,7 @@ const Home = () => {
               ))}
             </Row>
           </div>
-          <Services></Services>
+          
           <Review></Review>
           <Testmonial></Testmonial>
         </Container>

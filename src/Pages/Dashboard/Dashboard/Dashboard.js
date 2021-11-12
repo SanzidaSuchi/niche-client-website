@@ -48,26 +48,30 @@ const Dashbaord = () => {
               <Link to={`${url}/pay`}>
                 <li className="dashboard-menu mt-5">Payment</li>
               </Link>
-              <div className="admin-dashboard">
-                <li className="dashboard-menu mt-5">Orders list</li>
-
-                {isAdmi && (
-                  <Link to={`${url}/addServices`}>
+                    <div className="admin-dashboard">
+                    {isAdmi && (
+                    <Link to={`${url}/addServices`}>
                     <li className="dashboard-menu">Add Service</li>
-                  </Link>
+                </Link>
                 )}
+                {isAdmi && (
                 <Link to={`${url}/makeAdmin`}>
-                  <li className="dashboard-menu">Make Admin</li>
+                <li className="dashboard-menu">Make Admin</li>
                 </Link>
+
+                )}
+                {isAdmi && (
+        
                 <Link to={`${url}/manageAllOrder`}>
-                  <li className="dashboard-menu">Manage All</li>
+                <li className="dashboard-menu">Manage All</li>
                 </Link>
-              </div>
+                        )}
+                    </div>
             </div>
           </div>
           <div className="col-md-9">
             <Switch>
-              <Route exact path={path}>
+              <Route exact path={`${path}/myOrder`}>
                 <MyOrder></MyOrder>
               </Route>
               <Route exact path={`${path}/review`}>
@@ -94,3 +98,11 @@ const Dashbaord = () => {
 };
 
 export default Dashbaord;
+
+
+
+
+
+
+
+
