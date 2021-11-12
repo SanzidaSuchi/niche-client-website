@@ -3,6 +3,10 @@
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider';
+import AddServices from './Pages/Dashboard/AddServices/AddServices';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import ManageAllOrder from './Pages/Dashboard/DashboardHome/ManageAllOrder';
+import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import Home from './Pages/Home/Home/Home';
 import ServiceDetails from './Pages/Home/ServiceDetails/ServiceDetails';
 import Services from './Pages/Home/Services/Services';
@@ -26,11 +30,23 @@ function App() {
         <Route  path="/home">
         <Home></Home>
         </Route>
-        <Route  path="/services">
+        <PrivateRoute  path="/services">
         <Services></Services>
-        </Route>
+        </PrivateRoute>
         <PrivateRoute  path="/details/:serviceId">
        <ServiceDetails></ServiceDetails>
+        </PrivateRoute>
+        <PrivateRoute path="/dashboard">
+             <Dashboard />
+           </PrivateRoute>
+           <PrivateRoute  path="/addServices">
+        <AddServices></AddServices>
+        </PrivateRoute>
+           <PrivateRoute  path="/myOrder">
+        <MyOrder></MyOrder>
+        </PrivateRoute>
+        <PrivateRoute  path="/manageAll">
+        <ManageAllOrder></ManageAllOrder>
         </PrivateRoute>
         <Route  path="/login">
         <Login></Login>

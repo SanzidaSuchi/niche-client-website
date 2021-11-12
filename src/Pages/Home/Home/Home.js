@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel, Container, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
+import Review from '../../Dashboard/Review/Review';
 import Service from '../Service/Service';
 import Services from '../Services/Services';
 import Testmonial from '../Testmonial/Testmonial';
@@ -53,6 +54,7 @@ const Home = () => {
             </Row>
           </div>
           <Services></Services>
+          <Review></Review>
           <Testmonial></Testmonial>
         </Container>
         </div>

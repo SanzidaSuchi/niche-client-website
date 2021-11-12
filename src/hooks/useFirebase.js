@@ -109,6 +109,26 @@ const useFirebase = () => {
       );
     });
   }
+  const handleUserRegister = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        console.log(result.user);
+        hanldeUserInfoRegister(result.user.email);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+      });
+  };
+
+  const hanldeUserInfoRegister = (email) => {
+    fetch("http://localhost:5000/addUserInfo", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+  };
 
   return {
     sendVilifiedEmail,
@@ -127,7 +147,9 @@ const useFirebase = () => {
     signInWithEmail,
     getName,
     getPhotoURL,
-    loading
+    loading,
+    handleUserRegister
+    
     
   };
 };
