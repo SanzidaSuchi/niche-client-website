@@ -8,6 +8,7 @@ import MakeAdmin from "./../MakeAdmin/MakeAdmin";
 import useFirebase from "../../../hooks/useFirebase";
 import MyOrder from "../MyOrder/MyOrder";
 import ManageAllOrder from "./../DashboardHome/ManageAllOrder";
+import Pay from "../Pay/Pay";
 
 const Dashbaord = () => {
   let { path, url } = useRouteMatch();
@@ -32,17 +33,20 @@ const Dashbaord = () => {
         <div className="row">
           <div className="col-md-3 ">
             <div className="dashboard">
-              <h5>Dashboard</h5>
+              <h5>DashBoard</h5>
               <Link to={`${url}`}>
                 <li className="dashboard-menu mt-5">Book</li>
               </Link>
 
               <Link to={`${url}/myOrder`}>
-                <li className="dashboard-menu mt-5">My order list</li>
+                <li className="dashboard-menu mt-5">My Order list</li>
               </Link>
 
               <Link to={`${url}/review`}>
                 <li className="dashboard-menu mt-5">Review</li>
+              </Link>
+              <Link to={`${url}/pay`}>
+                <li className="dashboard-menu mt-5">Payment</li>
               </Link>
               <div className="admin-dashboard">
                 <li className="dashboard-menu mt-5">Orders list</li>
@@ -77,6 +81,9 @@ const Dashbaord = () => {
               </Route>
               <Route exact path={`${path}/manageAllOrder`}>
                 <ManageAllOrder></ManageAllOrder>
+              </Route>
+              <Route exact path={`${path}/pay`}>
+               <Pay></Pay>
               </Route>
             </Switch>
           </div>
