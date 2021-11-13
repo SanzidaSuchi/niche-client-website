@@ -9,6 +9,7 @@ import useFirebase from "../../../hooks/useFirebase";
 import MyOrder from "../MyOrder/MyOrder";
 import ManageAllOrder from "./../DashboardHome/ManageAllOrder";
 import Pay from "../Pay/Pay";
+import ManageProduct from "../ManageProduct/ManageProduct";
 
 const Dashbaord = () => {
   let { path, url } = useRouteMatch();
@@ -50,8 +51,8 @@ const Dashbaord = () => {
               </Link>
                     <div className="admin-dashboard">
                     {isAdmi && (
-                    <Link to={`${url}/addServices`}>
-                    <li className="dashboard-menu">Add Service</li>
+                    <Link to={`${url}/addService`}>
+                    <li className="dashboard-menu">Add NewProduct</li>
                 </Link>
                 )}
                 {isAdmi && (
@@ -64,6 +65,12 @@ const Dashbaord = () => {
         
                 <Link to={`${url}/manageAllOrder`}>
                 <li className="dashboard-menu">Manage All</li>
+                </Link>
+                        )}
+                {isAdmi && (
+        
+                <Link to={`${url}/manageProduct`}>
+                <li className="dashboard-menu">Manage Product</li>
                 </Link>
                         )}
                     </div>
@@ -88,6 +95,9 @@ const Dashbaord = () => {
               </Route>
               <Route exact path={`${path}/pay`}>
                <Pay></Pay>
+              </Route>
+              <Route exact path={`${path}/manageProduct`}>
+               <ManageProduct></ManageProduct>
               </Route>
             </Switch>
           </div>
