@@ -12,7 +12,7 @@ const AddServices = () => {
 
   const onSubmit = (data) => {
     data.email = user?.email;
-    fetch("http://localhost:5000/services", {
+    fetch("https://still-waters-75696.herokuapp.com/services", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

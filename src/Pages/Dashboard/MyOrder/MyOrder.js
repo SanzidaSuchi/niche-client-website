@@ -14,7 +14,7 @@ const MyOrder = () => {
     const { user } = useFirebase()
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://still-waters-75696.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [deleted])
@@ -22,7 +22,7 @@ const MyOrder = () => {
     const handleDeleteOrder = (id) => {
         const proceed = window.confirm('Are you confirm to cancel booking?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://still-waters-75696.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

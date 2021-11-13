@@ -10,7 +10,7 @@ import Testmonial from '../Testmonial/Testmonial';
 const Home = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://still-waters-75696.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
